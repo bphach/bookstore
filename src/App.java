@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         boolean on = true;
         Scanner scan = new Scanner(System.in); 
         while(on == true) {
-            System.out.println("Welcome to the Bookstore!");
-            System.out.println("1. Purchase items.");
-            System.out.println("2.Check the stock of each item.");
-            System.out.println("3.Register as new member.");
-            System.out.println("4. Exit.");
+            System.out.println("\nWelcome to the Bookstore!");
+            System.out.println("\t1. Purchase items.");
+            System.out.println("\t2.Check the stock of each item.");
+            System.out.println("\t3.Register as new member.");
+            System.out.println("\t4. Exit.");
             int userInput = scan.nextInt();
             switch (userInput) {
                 case 1:
@@ -17,7 +17,11 @@ public class App {
                     System.out.println("1. Shrek | CD | $12.99");
                     System.out.println("2. Sam udon noodle soup | CD | $20.99");
                     System.out.println("3. Clint Chai | MP4 | $16.99");
+                    System.out.println("4. Niko Cheese of fury | Film | $10.99");
+                    System.out.println("5. Doug Dimmadome: How to be the best Dimmadome | Book | $9.99");
+                    System.out.println("6. Doctor Dimmadome: How to be the best Dimmadome | Book | $9.99");
                     int purchaseInput = scan.nextInt();
+                    loading(); 
                     System.out.println("Thank you!");
                     break;
                 case 2:
@@ -25,6 +29,9 @@ public class App {
                     System.out.println("1. Shrek");
                     System.out.println("2. Sam udon noodle soup");
                     System.out.println("3. Clint Chai");
+                    System.out.println("4. Niko Cheese of fury");
+                    System.out.println("5. Doug Dimmadome: How to be the best Dimmadome");
+                    System.out.println("6. Doctor Dimmadome: How to be the best Dimmadome");
                     int idInput = scan.nextInt();
                     System.out.println("Fully in Stock!");
                     break;
@@ -36,14 +43,16 @@ public class App {
                     switch (memberInput) {
                         case 1:
                             System.out.println("Enter your first and last name.");
-                            Scanner addFirstName = new Scanner(System.in);
-                            String firstName = (addFirstName.nextLine());
+                            Scanner name = new Scanner(System.in); 
+                            String nameInput = name.nextLine();
+                            loading(); 
                             System.out.println("Thank you for registering!");
                             break;
                         case 2:
                             System.out.println("Enter your debit/credit number.");
                             String cardInput = scan.next();
                             System.out.println("You will be billed $12.99 as of this month.");
+                            loading(); 
                             System.out.println("Thank you for registering!");
                             break;
                     
@@ -62,5 +71,12 @@ public class App {
                     break;
             }
         }
+    }
+
+    public static void loading() throws InterruptedException{
+        System.out.println("Loading..."); 
+        Thread.sleep(1500);
+        System.out.println("Loading Successful!");
+        Thread.sleep(1500);
     }
 }
