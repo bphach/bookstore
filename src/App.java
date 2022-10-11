@@ -2,14 +2,18 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws InterruptedException {
+        //CREATE CLASS AS OBJECT IN ORDER TO USE IT 
+        Memberships Membership = new Memberships();
+        
         boolean on = true;
         Scanner scan = new Scanner(System.in); 
         while(on == true) {
             System.out.println("\nWelcome to the Bookstore!");
-            System.out.println("\t1. Purchase items.");
+            System.out.println("\t1.Purchase items.");
             System.out.println("\t2.Check the stock of each item.");
-            System.out.println("\t3.Register as new member.");
-            System.out.println("\t4. Exit.");
+            System.out.println("\t3.Register Membership");
+            System.out.println("\t4.Check Membership List");
+            System.out.println("\t5.Exit.");
             int userInput = scan.nextInt();
             switch (userInput) {
                 case 1:
@@ -45,13 +49,21 @@ public class App {
                             System.out.println("Enter your first and last name.");
                             Scanner name = new Scanner(System.in); 
                             String nameInput = name.nextLine();
+                            //Adds Free Membership to Arraylist "memberList". See Membership Class for details.
+                            Membership.memberList.add(new Free(nameInput));
                             loading(); 
                             System.out.println("Thank you for registering!");
                             break;
                         case 2:
+                            System.out.println("Enter your first and last name.");
+                            Scanner name1 = new Scanner(System.in); 
+                            String name1Input = name1.nextLine();
                             System.out.println("Enter your debit/credit number.");
                             String cardInput = scan.next();
+                            int IDInput = (int) Math.random()*50;
                             System.out.println("You will be billed $12.99 as of this month.");
+                            //Adds Premium Membership to Arraylist "memberList". See Membership Class for details.
+                            Membership.memberList.add(new Premium(name1Input, cardInput, IDInput));
                             loading(); 
                             System.out.println("Thank you for registering!");
                             break;
@@ -62,6 +74,9 @@ public class App {
                     }
                     break;
                 case 4:
+                    System.out.println(Membership.memberList);
+                    break;
+                case 5:
                 System.out.println("Now exiting...");
                     on = false; 
                     break;
