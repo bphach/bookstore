@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         boolean on = true;
         Scanner scan = new Scanner(System.in); 
         while(on == true) {
@@ -15,14 +15,18 @@ public class App {
                 case 1:
                     System.out.println("What would you like to purchase?");
                     System.out.println("1. Shrek | CD | $12.99");
-                    System.out.println("2. Shrek | CD | $12.99");
-                    System.out.println("3. Shrek | CD | $12.99");
+                    System.out.println("2. Sam udon noodle soup | CD | $20.99");
+                    System.out.println("3. Clint Chai | MP4 | $16.99");
                     int purchaseInput = scan.nextInt();
                     System.out.println("Thank you!");
                     break;
                 case 2:
                     System.out.println("Enter item ID.");
+                    System.out.println("1. Shrek");
+                    System.out.println("2. Sam udon noodle soup");
+                    System.out.println("3. Clint Chai");
                     int idInput = scan.nextInt();
+                    System.out.println("Fully in Stock!");
                     break;
                 case 3:
                     System.out.println("What membership would you like to register for?");
@@ -32,16 +36,16 @@ public class App {
                     switch (memberInput) {
                         case 1:
                             System.out.println("Enter your first and last name.");
-                            break;
-                        case 2:
-                            System.out.println("You will be billed $12.99 as of this month.");
-                            System.out.println("Enter your first and last name.");  
-                            String nameInput = scan.nextLine();
-                            System.out.println("Enter your debit/credit number.");
-                            String cardInput = scan.nextLine();
+                            Scanner addFirstName = new Scanner(System.in);
+                            String firstName = (addFirstName.nextLine());
                             System.out.println("Thank you for registering!");
                             break;
-
+                        case 2:
+                            System.out.println("Enter your debit/credit number.");
+                            String cardInput = scan.next();
+                            System.out.println("You will be billed $12.99 as of this month.");
+                            System.out.println("Thank you for registering!");
+                            break;
                     
                         default:
                         System.out.println("You must enter number 1-2.");
