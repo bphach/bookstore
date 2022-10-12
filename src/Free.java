@@ -1,5 +1,5 @@
 class Free {
-    //Initalizes 
+    //Fields
     String name;
 
     //Constructors

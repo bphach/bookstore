@@ -2,9 +2,10 @@
 import java.util.ArrayList;
 
 public class Memberships {
-    //Initalizes 
+    //Fields 
     ArrayList<Free> memberList = new ArrayList<>();
     
+    //
     public Memberships() {
         //populating arraylist
         memberList.add(new Free("Brandon Hach"));
