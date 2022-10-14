@@ -20,8 +20,8 @@ public class App {
                     System.out.println("What would you like to purchase?");
                     System.out.println("1. Shrek | CD | $12.99");
                     System.out.println("2. Sam udon noodle soup | CD | $20.99");
-                    System.out.println("3. Clint Chai | MP4 | $16.99");
-                    System.out.println("4. Niko Cheese of fury | MP4 | $10.99");
+                    System.out.println("3. Clint chai | Podcast | $16.99");
+                    System.out.println("4. Niko cheese of fury | Podcast | $10.99");
                     System.out.println("5. Doug Dimmadome: How to be the best Dimmadome | Book | $9.99");
                     System.out.println("6. Doctor Dimmadome: How to be the best Dimmadome | Book | $9.99");
                     int purchaseInput = scan.nextInt();

@@ -1,7 +1,6 @@
 class Premium extends Free{
     //Fields
     String cardNumber;
-    String gender; 
     int ID;
     
 
