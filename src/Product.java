@@ -41,7 +41,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "{" + " Title='" + getTitle() + "'" + ", price='" + getPrice() + "'" + ", Author='" + getAuthor() + "'" + ", Stock='" + getStock() + "'" + "\n" + "}";
+        return " Title='" + getTitle() + "'" + ", price='" + getPrice() + "'" + ", Author='" + getAuthor() + "'" + ", Stock='" + getStock() + "'" + "\n" ;
     
     
      }

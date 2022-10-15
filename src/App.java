@@ -4,6 +4,7 @@ public class App {
     public static void main(String[] args) throws InterruptedException {
         //CREATE CLASS AS OBJECT IN ORDER TO USE IT 
         Memberships Membership = new Memberships();
+        Inventory inventory = new Inventory();
         
         boolean on = true;
         Scanner scan = new Scanner(System.in); 
@@ -18,12 +19,11 @@ public class App {
             switch (userInput) {
                 case 1:
                     System.out.println("What would you like to purchase?");
-                    System.out.println("1. Shrek | CD | $12.99");
-                    System.out.println("2. Sam udon noodle soup | CD | $20.99");
-                    System.out.println("3. Clint chai | Podcast | $16.99");
-                    System.out.println("4. Niko cheese of fury | Podcast | $10.99");
-                    System.out.println("5. Doug Dimmadome: How to be the best Dimmadome | Book | $9.99");
-                    System.out.println("6. Doctor Dimmadome: How to be the best Dimmadome | Book | $9.99");
+                    int increment = 1;
+                    for (int i = 0; i < inventory.productList.size(); i++) {
+                        System.out.println(increment + ". " + inventory.productList.get(i));
+                        increment += 1;
+                    }
                     int purchaseInput = scan.nextInt();
                     loading(); 
                     System.out.println("Thank you!");
